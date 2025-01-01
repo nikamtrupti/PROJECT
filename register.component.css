@@ -1,0 +1,51 @@
+.register-container {
+  width: 300px;
+  margin: 0 auto;
+ padding: 30px;
+ border: 1px solid #cccccc;
+ border-radius: 8px;
+
+}
+
+h2{
+  text-align: center;
+  
+  }
+/* src/styles.css or src/app.css */
+
+
+
+form {
+  display: flex;
+  border-radius: 10px;
+  flex-direction: column;
+  
+}
+
+input {
+  margin: 10px 0;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px;
+  background-color: #0cf80c;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+.error-text {
+  color: red;
+  font-size: 12px;
+}
+
+button{
+  color: #000;
+}
+
+

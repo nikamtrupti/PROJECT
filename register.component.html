@@ -1,0 +1,167 @@
+<br>
+<br>
+ <div class="register-container">
+   <!-- <form [formGroup]="registrationForm"(ngSubmit)="onSubmit()"> -->
+    <form #registrationForm="ngForm"  (ngSubmit)="onSubmit(registrationForm)">
+      <div>
+        <h2> <ul>Registration </ul></h2>
+<br>
+<br>
+      </div>
+      <div>
+        <label for="customerName">Customer Name</label>
+        <!-- <input id="customerName" formControlName="customerName" type="text" />
+        <div *ngIf="registrationForm.get('customerName')?.invalid && registrationForm.get('customerName')?.touched">
+          <small class="error-text">Customer Name is required.</small>
+        </div> -->
+
+        <input type="text" id="name" class="form-control" required [(ngModel)]="client.client_name" name="name">
+
+      </div>
+  
+      <div>
+        <label for="email">Email</label><br>
+        <input type="email" id="email" class="form-control" required [(ngModel)]="client.client_email" name="email">
+        <!-- <input id="email" formControlName="email" type="email" /><br>
+        <div *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched">
+          <small class="error-text">Please enter a valid email.</small>
+        </div> -->
+      </div>
+  
+      <div>
+        <label for="phoneNo">Phone Number</label>
+        <input id="phoneNo" class="form-control" required [(ngModel)]="client.client_mobileno" name="phoneNo">
+        <!-- <input id="phoneNo" formControlName="phoneNo" type="text" />
+        <div *ngIf="registrationForm.get('phoneNo')?.invalid && registrationForm.get('phoneNo')?.touched">
+          <small class="error-text">Phone number must be 10 digits.</small>
+        </div> -->
+      </div>
+  
+      <div>
+        <label for="password">Password</label><br>
+        <input type="password" id="password" class="form-control" required [(ngModel)]="client.client_password" name="password">
+        <!-- <input id="password" formControlName="password" type="password" /><br>
+        <div *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched">
+          <small class="error-text">Password is required (minimum 6 characters).</small>
+        </div> -->
+      </div>
+ <div>
+  <input type="radio" name="register" value="Register For Appoitement">Register For Appoitment <br>
+  <input type="radio" name="register" value="Register For Cources"> Register For Cources<br>
+ </div>
+  <br>
+       <button (click)= "gotoSubmit()"  [disabled]="registrationForm.invalid">Register    </button>
+        <!-- <button typesubmit= "submit" class="btn btn-primary"> Register    </button>  -->
+        <p>Already have an account? <a routerLink="/loginpage">Login here</a></p> 
+      
+  </form>
+  </div>
+   
+======================================================================================================================================================================
+<!-- <div class="container">
+  <header>
+    <h1> Registration...</h1>
+   
+  </header>
+<section class="Sign-up-form">
+  <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+
+    <div class="form-group">
+
+        <label for="name">Name:</label>
+
+        <input type="text" id="name" class="form-control" required [(ngModel)]="Client.clientName" name="name">
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="email">Email:</label>
+
+        <input type="email" id="email" class="form-control" required [(ngModel)]="Client.clientEmail" name="email">
+
+      </div>
+
+      <div class="form-group">
+
+        <label for="password">Password:</label>
+
+        <input type="password" id="password" class="form-control" required [(ngModel)]="Client.clientPassword" name="password">
+
+      </div>
+      <button (click)= "onSubmit()"  [disabled]="registrationForm.invalid">
+        Register   
+      </button>  
+      <button (click)= "onSubmit()">Register</button> 
+        
+          <p>Already have an account? <a routerLink="/loginpage">Login here</a></p> 
+      
+
+    </form>
+    </section> -->
+=========================================================================================================================================================================================
+
+
+
+1 st register (santosh)
+    <!-- ======================================================================================================================================================================
+    <div class="register-container">
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+  
+        <div>
+          <h2> <ul>Registration </ul></h2>
+  <br>
+  <br>
+        </div>
+        <div>
+          <label for="customerName">Customer Name</label>
+          <input id="customerName" formControlName="customerName" type="text" />
+          <div *ngIf="registrationForm.get('customerName')?.invalid && registrationForm.get('customerName')?.touched">
+            <small class="error-text">Customer Name is required.</small>
+          </div>
+        </div>
+    
+        <div>
+          <label for="email">Email</label><br>
+          <input id="email" formControlName="email" type="email" /><br>
+          <div *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched">
+            <small class="error-text">Please enter a valid email.</small>
+          </div>
+        </div>
+    
+        <div>
+          <label for="phoneNo">Phone Number</label>
+          <input id="phoneNo" formControlName="phoneNo" type="text" />
+          <div *ngIf="registrationForm.get('phoneNo')?.invalid && registrationForm.get('phoneNo')?.touched">
+            <small class="error-text">Phone number must be 10 digits.</small>
+          </div>
+        </div>
+    
+        <div>
+          <label for="password">Password</label><br>
+  
+          <input id="password" formControlName="password" type="password" /><br>
+          <div *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched">
+            <small class="error-text">Password is required (minimum 6 characters).</small>
+          </div>
+        </div>
+    
+  
+   <div>
+    <input type="radio" name="register" value="Register For Appoitement">Register For Appoitment <br>
+    <input type="radio" name="register" value="Register For Cources"> Register For Cources<br>
+  </div>
+  
+    <br>
+         <!-- <button (click)= "gotoSubmit()"  [disabled]="registrationForm.invalid">
+        Register   
+      </button>  -->
+      <!-- <button (click)= "gotoSubmit()">Register</button> 
+        
+          <p>Already have an account? <a routerLink="/loginpage">Login here</a></p>
+        
+      
+        
+      </form>
+    </div>
+     --> 

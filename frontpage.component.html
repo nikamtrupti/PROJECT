@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="homemain1.css"> -->
+    <title>Beauty Parlour Appointment System</title>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script> -->
+</head>
+<body ng-app="beautyParlourApp" ng-controller="MainController">
+<header>
+    
+        <!-- Here you can show login/register form or other logic as needed -->
+        <!-- <div *ngIf="isLoginClicked"></div> -->
+    <h2>Welcome to Unique Creations</h2>
+    
+    <nav>
+        <a href="">Our services</a>
+        <a href="">Our Courses</a>
+         <!-- <a routerLink="/admin1">admin</a> -->
+         <a >Feedback</a>
+         <div style="text-align: right;">
+            <!-- Login Button -->
+            <!-- <button (click)="showLoginOptions()">Login</button> -->
+             <!-- <button type="submit" class="login-btn" >Login</button> -->
+                <a routerLink="/loginpage">Login</a>
+                <a routerLink="/register">Register</a>
+                
+            <!-- Register Button -->
+            <!-- <button [routerLink]="'/register'">Register</button> -->
+            <!-- <button (click)= "gotoSubmit()"  [disabled]="registrationForm.invalid">Register    </button> -->
+          
+            <!-- Dropdown for selecting login type (visible when isLoginClicked is true) -->
+            <div *ngIf="isLoginClicked">
+              <label for="loginType">Select Login Type:</label>
+              <select [(ngModel)]="loginType" id="loginType">
+                <option value="admin">Login as Admin</option>
+                <option value="user">Login as User</option>
+              </select>
+          
+              <!-- Login Button to trigger navigation based on selection -->
+              <button (click)="onLogin()">Login</button>
+            </div>
+          </div>
+          
+          
+    </nav>
+  
+</header>
+
+<br>
+
+
+<div class="container">
+
+    
+    <div class="text-section">
+      
+      
+        <p>Welcome to Unique Creations beauty parlour, where beauty meets elegance! Established in 2013, 
+            we have been dedicated to providing top-notch beauty services tailored to your individual needs.
+        </p>
+        <h4>
+            <ul>
+                <li>Call us :+7524872042 </li>
+                <li>Email us: uniquecreations&commat;gmail.com</li>
+                <li>Address:Shramashree Building, Above Walkaway Showroom Near
+                     Vijan Hospital,College Rd, Nashik, Maharashtra 422005</li>
+                <li>Hours:  Monday to sunday :11:30am:9pm  </li>
+            </ul>
+            
+        </h4>
+    </div>
+    <div class="video-section">
+        <video width="800" height="600" controls>
+            <source src="Makeup Brushes.mp4">
+            Your browser does not support HTML video.
+        </video>
+    </div>
+</div>
+    <div class="text"><h3>Our Artist</h3></div>
+
+
+
+<!-- <div class="artist-container">
+    <div class="artist-card" ng-repeat="artist in artists">
+        <img ng-src="{{artist.image}}" alt="{{artist.name}}">
+        <h2>{{artist.name}}</h2>
+        <h3>{{artist.role}}</h3>
+        <p>{{artist.description}}</p>
+    </div> 
+</div>-->
+<div class="artist-container">
+    <div class="artist-card" ng-repeat="artist in artists">
+          <img src="artist2.jpeg" alt="Alice Johnson"> 
+         
+        <h3>Hair Stylist</h3>
+        <p>Alice has over 10 years of experience in hair styling, specializing 
+            in modern cuts and colors.</p>
+    </div> 
+    <!-- <img src="artist1.jpeg" /> -->
+    </div>  
+
+    <div class="artist-container">
+        <div class="artist-card" ng-repeat="artist in artists">
+          
+            <img src="artist1.jpeg" alt="Bob Smith">
+            <h2>Bob Smith</h2>
+            <h3>Nail Artist</h3>
+            <p>Bob specializes in nail art and has a passion for creativity, providing unique 
+                designs for every occasion.</p>
+        </div> 
+        </div>
+
+        <div class="artist-container">
+            <div class="artist-card" ng-repeat="artist in artists">
+                <img src="artist3.jpeg" alt="Charlie Brown">
+                <h2>Charlie Brown</h2>
+                <h3>Makeup Artist</h3>
+                <p>Charlie has a keen eye for detail and creates stunning looks for events 
+                    and photoshoots.</p>
+            </div> 
+            </div>
+            <div class="text1">
+           <h2>what our client says</h2></div>
+            
+	<br><br><br>
+        
+
+<h2>
+    <marquee scrollamount="10">About us</marquee>
+</h2>
+
+<div class="main1">
+    <h1>
+        Our team of experienced and professional beauticians is passionate about helping you look and feel your best. 
+        Whether it’s a haircut, makeup application, facial, or a relaxing spa treatment, we offer a wide range of services 
+        designed to pamper you.
+
+        At Unique Creations beauty parlour, we use high-quality products and the latest techniques to ensure that you
+        receive the best possible care. 
+        Our mission is to create a serene and welcoming environment where you can 
+        escape from your daily routine and indulge in some well-deserved self-care.
+
+        Join us for a transformative experience that enhances your natural beauty.
+        We look forward to welcoming you to our parlour!
+    </h1>
+</div>
+
+<script>
+    angular.module('beautyParlourApp', [])
+        .controller('MainController', function($scope) {
+            $scope.contact = {
+                phone: '+7524872042',
+                email: 'uniquecreations@gmail.com',
+                address: 'Shramashree Building, Above Walkaway Showroom Near Vijan Hospital, College Rd, Nashik, Maharashtra 422005',
+                hours: 'Monday to Sunday: 11:30 AM - 9:00 PM'
+            };
+
+            $scope.artists = [
+                {
+                    name: 'Alice Johnson',
+                    role: 'Hair Stylist',
+                    description: 'Alice has over 10 years of experience in hair styling, specializing in modern cuts and colors.',
+                    image: 'artist2.jpeg'
+                },
+                {
+                    name: 'Bob Smith',
+                    role: 'Nail Artist',
+                    description: 'Bob specializes in nail art and has a passion for creativity, providing unique designs for every occasion.',
+                    image: 'artist1.jpeg'
+                },
+                {
+                    name: 'Charlie Brown',
+                    role: 'Makeup Artist',
+                    description: 'Charlie has a keen eye for detail and creates stunning looks for events and photoshoots.',
+                    image: 'artist3.jpeg'
+                }
+            ];
+        });
+</script>
+</body>
+</html>
